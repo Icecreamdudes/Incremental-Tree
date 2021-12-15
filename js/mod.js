@@ -14,13 +14,13 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "0.0",
-	name: "First half of first layer",
+	name: "The Start of a revolution",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+		- Added The First and Second Layer, as well as a Special Layer<br>
+		- Added a lot of cool stuff! These layers are packed with content!`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -48,6 +48,19 @@ function getPointGen() {
 	if (hasUpgrade('i', 14)) gain = gain.times(upgradeEffect('i', 14))
 	gain = gain.times(buyableEffect('i', 11))
 	gain = gain.times(buyableEffect('i', 31))
+	if (hasUpgrade('i', 42)) gain = gain.times(upgradeEffect('i', 42))
+	if (hasUpgrade('i', 43)) gain = gain.pow(1.03)
+	if (hasUpgrade('i', 51)) gain = gain.times(1e30)
+	gain = gain.pow(buyableEffect('i', 42))
+	if (hasUpgrade('cc', 21)) gain = gain.times(upgradeEffect('cc', 21))
+	if (hasUpgrade('cc', 42)) gain = gain.times(upgradeEffect('cc', 42))
+	if (hasUpgrade('cc', 72)) gain = gain.times(upgradeEffect('cc', 72))
+	if (hasUpgrade('cc', 81)) gain = gain.times(upgradeEffect('cc', 81))
+	if (hasUpgrade('cc', 83)) gain = gain.times(upgradeEffect('cc', 83))
+	if (hasUpgrade('cc', 101)) gain = gain.times(upgradeEffect('cc', 101))
+	if (hasUpgrade('l', 11)) gain = gain.times(upgradeEffect('l', 11))
+	if (hasUpgrade('l', 12)) gain = gain.times(player.l.savedmoneyeffect)
+	if (hasUpgrade('cc', 213)) gain = gain.times(upgradeEffect('cc', 213))
 	return gain
 }
 
